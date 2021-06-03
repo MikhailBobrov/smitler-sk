@@ -1,0 +1,920 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+//body input:focus:required:invalid,
+//body textarea:focus:required:invalid
+//	color: #666
+//body input:required:valid,
+//body textarea:required:valid
+//	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	&.is-home
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			color: #ffffff
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: 1
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	line-height: 1.4
+	text-transform: uppercase
+
+.button
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 5px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	//&::after
+	//	transition: background-color .2s ease
+	//	position: absolute
+	//	content: ''
+	//	height: 4px
+	//	bottom: 0
+	//	width: 100%
+	//	background-color: darken($accent, 50%)
+	//	opacity: .18
+	//	border-bottom-left-radius: 2px
+	//	border-bottom-right-radius: 2px
+	//	left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($accent, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($accent, 5%)
+		&::after
+			opacity: .32
+	&.button-white
+		background-color: white
+		color: #444
+		transition: .2s ease
+		&:hover
+			background-color: lavender
+
+
+.logo
+	img
+		width: 125px
+		height: auto
+		margin-left: 45px
+
+.phone
+	position: absolute
+	right: 85px
+	top: 44px
+	font-family: firasans, sans-serif
+	font-size: 22px
+	white-space: nowrap
+	.fa
+		color: #555
+		font-size: 22px
+		margin-right: 3px
+
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+section
+	background-color: #ffffff
+	&.inverse
+		color: #fff
+		background-color: $dark
+	.h2
+		color: $accent
+		font-size: 30px
+		font-weight: 800
+		span
+			color: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+//	стилизую меню - бургер
+
+.hamburger
+	position: absolute
+	right: 0
+	top: 34px
+	.hamburger-box
+		width: 34px
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+	border-radius: 0
+	width: 37px
+	height: 2px
+	background-color: #ffffff
+
+//	стилизую списки меню - картинка к нам пришла из common.js - title: '<img src="img/logo-1.svg" alt="Салон красоты Смитлер">'
+
+.mm-navbar
+	height: auto
+	position: relative
+	border: none
+	.mm-navbar__title
+		padding: 0
+		img
+			width: 128px
+			height: auto
+			margin: 20px 0 35px
+
+// это спец классы mmenu - искать их надо в devtools
+html.mm-opened
+	overflow-y: scroll
+
+.mm-panels > .mm-panel.mm-hasnavbar
+	right: -18px
+
+.mm-listview > li:not(.mm-divider)::after
+	display: none
+
+.mm-menu.mm-theme-black .mm-listview > li.mm-selected > a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview > li.mm-selected > span
+	background: transparent
+	color: $accent
+
+
+.mm-panels > .mm-panel:after, .mm-panels > .mm-panel:before
+	height: 0
+
+.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview
+	margin-top: 0
+
+//	стилизация списка самого - очень интересно как делает с padding
+.mm-listview
+	> li
+		> a
+			transition: color .25s ease
+			padding:
+				left: 14%
+				right: 14%
+				top: 8px
+			&:hover
+				color: $accent
+				::before
+					color: $accent
+			&::before
+				content: '\f219'
+				font-family: fontawesome
+				margin-right: 8px
+				text-decoration: none
+				font-size: 12px
+				color: #fff
+				transition: color .25s ease
+		&.active
+			& > a
+				color: $accent
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.header-flex
+	display: flex
+	align-items: center
+	height: 100%
+	position: relative
+	top: 0
+
+.flex-center
+	margin: 0 auto
+
+.header-composition
+	text-align: center
+	position: relative
+	p
+		margin-top: 40px
+	.button
+		margin-top: 25px
+
+// сложный элемент - линии по краям - изучить еще раз
+.welcome
+	p
+		font-size: 14px
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		margin-bottom: -10px
+		&::before, &::after
+			content: ''
+			height: 1px
+			width: 100%
+			position: relative
+			background-color: #ffffff
+			display: inline-block
+		span
+			margin: 0 10px
+	.h1
+		font-weight: 100
+		font-size: 70px
+		margin: 0
+		line-height: 1.6
+		border-bottom: 1px solid #ffffff
+		white-space: nowrap
+	strong
+		display: block
+		text-transform: uppercase
+		font-size: 17px
+		margin-top: 25px
+		.fa
+			margin-right: 10px
+			font-size: 12px
+			color: #555555
+			&:last-child
+				margin-left: 10px
+				margin-right: inherit
+
+// социальные сети
+.header-social
+	position: absolute
+	display: flex
+	//align-items: center
+	top: 0
+	right: 0
+	height: 100%
+	border-left: 1px solid rgba(#fff, .1)
+	padding: 0 12.5px
+
+.soc
+	// центирирует по вертикали
+	margin: auto
+	ul, li
+		list-style: none
+		padding: 0
+		margin: 0
+	a
+		color: #2c2c2c
+		font-size: 17px
+		display: block
+		background-color: rgba(#fff, .2)
+		height: 38px
+		width: 38px
+		line-height: 38px
+		text-align: center
+		margin: 18px 0
+		border-radius: 10rem
+		transition: background-color .25s ease
+		&:hover
+			background-color: rgba(#fff, .4)
+
+.header-contacts
+	position: absolute
+	bottom: 0
+	left: 0
+	border-top: rgba(#fff, .15) 1px solid
+	padding: 12.5px 0
+	width: 100%
+	background-color: rgba(#151515, .15)
+	.fa
+		margin-right: 5px
+		color: #555555
+	.phone-h
+		font-family: firasans, sans-serif
+		text-align: center
+
+// карусель - здесь я делаю цикл (у меня три цвета)
+$colors: $blue, $red, $accent
+
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n + #{$i} )
+		background-color: nth($colors, $i)
+
+.carousel-services
+	background-color: $dark
+	&-item
+		color: white
+		font-size: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		cursor: pointer
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img
+				display: inline-block
+				width: 100px
+				height: auto
+
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .7
+		transition: opacity .5s ease
+
+	&-content
+		position: relative
+		padding: 60px 10%
+		.carousel-services-composition
+			margin: auto
+			text-align: center
+			width: 100%
+			.h3
+				text-transform: uppercase
+				font-weight: 800
+				font-size: 28px
+				margin-top: 5px
+				margin-bottom: 20px
+				span
+					font-weight: normal
+					font-size: 18px
+					display: block
+			.carousel-services-list
+				margin: 0
+				padding: 0
+				list-style: none
+				margin-bottom: 25px
+				li
+					padding: 9px
+					border-bottom: 1px solid rgba(#000, .12)
+					&:last-child
+						border-bottom: none
+					strong
+						font-family: firasans, sans-serif
+						color: #4a4a4a
+						.fa
+							font-size: 14px
+
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		> button
+			width: 64px
+			height: 64px
+			background-color: #fff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 26px
+			font-size: 26px
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot
+	background: #fff
+	color: inherit
+	border: none
+	padding: 0
+	font: inherit
+
+
+
+// это чтобы при прокрутке не было пропадания изображения
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+.s
+	&-king, &-review, &-partners
+		padding: 5% 0
+
+	&-king
+		p
+			margin: 30px 0
+			font-size: 18px
+
+
+
+
+.section-overlay
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $over
+		opacity: .92
+
+.fotorama
+	background-color: rgba($dark, .4)
+
+.fotorama__nav
+	&-wrap
+		//position: absolute
+		//bottom: 15px
+		//padding: 0 30px
+		width: 100%
+
+.fotorama__thumb
+	border: 4px solid #fff
+	transition: all .8s ease
+
+.fotorama__thumb-border
+	border-color: darken(#3d3c3c, 10)
+
+
+.fotorama__arr-
+	&-next, &-prev
+		&::before
+			font-family: fontawesome
+			font-size: 32px
+	&-prev
+		&::before
+			content: '\f104'
+	&-next
+		&::before
+			content: '\f105'
+
+.fotorama__active
+	.fotorama__thumb
+		border-color: darken(#3d3c3c, 10)
+
+
+// s-call + наша форма
+
+.s-call
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: 10%
+	&.inverse
+		background-color: #fff
+	&::before
+		content: ''
+		width: 50%
+		right: 0
+		height: 100%
+		position: absolute
+		background-color: rgba($accent, .92)
+
+
+//		общая стилизация
+input, textarea, select,
+.selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active
+	background-color: transparent
+	border: 1px solid rgba(#000, .1)
+	border-bottom: 2px solid rgba(#000, .1)
+	border-radius: 2px
+	padding: 8px 22px
+	outline: none
+	display: inline-block
+	font-size: 16px
+	color: #333
+select
+	padding: 10px 22px
+
+.selectize-control .selectize-input
+	box-shadow: none
+	overflow: inherit
+	line-height: inherit
+	text-align: left
+	input
+		font-size: 16px
+
+	&.dropdown-active::before
+		background-color: transparent
+
+.selectize-control.single
+	.selectize-input, &.dropdown-active
+		&::after
+			border: none
+			content: '\f107'
+			font-family: fontawesome
+			position: absolute
+			right: 30px
+			top: 12px
+		&.dropdown-active::after
+			content: '\f106'
+	.selectize-dropdown
+		font-size: 15px
+		border: none
+		border-radius: 0
+		text-align: left
+		background-color: lightblue
+		&-content
+			.option
+				padding: 10px 22px
+				&.active
+					background-color: lighten($accent, 15)
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+
+//	стилизация блока
+.callback
+	padding: 25% 0
+	position: relative
+	&-logo
+		img
+			width: 100px
+			height: auto
+	.formhead
+		margin-top: 0
+		font-size: 30px
+		color: #fff
+	p
+		margin-top: 0
+
+	input, textarea, select,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.input-active
+		color: #fff
+		width: 100%
+		margin-top: 17px
+
+		&::-webkit-input-placeholder
+			color: #fff
+			opacity: 1
+		&::-moz-placeholder
+			color: #fff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #fff
+
+		.option
+			color: #333
+	.button
+		margin-top: 40px
+
+// стилизуем карусель с отзывами
+
+.reviews
+	text-align: center
+
+	.owl-dots
+		width: 100%
+		text-align: center
+		margin-top: 60px
+		.owl-dot
+			width: 8px
+			height: 8px
+			background-color: white
+			border-radius: 10em
+			display: inline-block
+			margin: 5px
+			transition: all .5s ease
+			&.active
+				background-color: $accent
+				transform: scale(1.3)
+
+.quotes
+	position: absolute
+	width: 100%
+	&::after, &::before
+		content: ',,'
+		position: absolute
+		top: 142px
+		font-size: 56px
+		color: $accent
+		font-family: 'Times New Roman', serif
+		font-weight: bold
+		line-height: 0
+		transform: rotate(180deg)
+		display: block
+	&::before
+		top: 180px
+		left: -60px
+	&::after
+		right: -60px
+		transform: rotate(0)
+
+.review
+	margin-top: 20px
+	&-header
+		font-family: 'Times New Roman', serif
+		font-style: italic
+		font-size: 30px
+		font-weight: bold
+	&-date
+		font-family: 'Times New Roman', serif
+		font-style: italic
+		font-size: 15px
+		color: #7a7777
+	&-stars
+		margin: 18px 0 30px
+		font-size: 14px
+		color: $accent
+		.fa
+			margin: 0 2px
+	&-text
+		color: #95989A
+
+
+.s-partners.section-overlay
+	&::before
+		background-color: white
+
+	.h2
+		margin-top: 10px
+		span
+			color: $accent
+
+.partners
+	.partner
+		height: 100%
+		display: flex
+		margin: auto
+
+	.owl-stage
+		display: flex
+		align-items: center
+	.owl-item
+		margin-top: 30px
+		img
+			max-width: 100%
+			width: auto
+			display: inline-block
+			margin: auto
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 2
+		> button
+			color: #999
+			position: absolute
+			top: 50px
+			background: transparent
+			font-size: 50px
+			transition: all .5s ease
+			padding: 0 10px
+			&:hover
+				opacity: .6
+
+			&.owl-prev
+				left: -60px
+				background-color: transparent
+				.fa
+					font-size: 40px
+					padding: 0 10px
+
+			&.owl-next
+				right: -60px
+				background-color: transparent
+				.fa
+					font-size: 40px
+					padding: 0 10px
+
+.main-footer
+	background-color: #242424
+	padding: 3% 0
+	color: #fff
+	font-size: 14px
+
+.footer-column
+	margin: 15px 0
+
+
+.logo-footer
+	width: 125px
+	height: auto
+	+ p
+		font-size: 14px
+		color: #666
+		padding: 0
+		margin:
+			bottom: 15px
+			top: 15px
+
+.social-footer
+	margin-top: 38px
+	.soc
+		li
+			display: inline-block
+			margin: 3px
+			a
+				color: #ababab
+				margin-bottom: 0
+				transition: all .5s ease
+				&:hover
+					color: rgba(#fff, .8)
+
+.footer-menu
+	ul
+		padding: 0
+		margin: 0
+		list-style: none
+		li.active
+			a
+				color: $accent
+				&::before
+					color: $accent
+		a
+			color: #979797
+			transition: all .25s ease
+			display: inline-block
+			padding: 3.5px 0
+			text-decoration: underline
+			padding-left: 20px
+			position: relative
+			&:hover, &:focus
+				color: $accent
+				&::before
+					color: $accent
+			&::before
+				position: absolute
+				content: '\f219'
+				font-family: fontawesome
+				left: 0
+				top: 6px
+				margin-right: 12px
+				font-size: 12px
+				color: #fff
+				transition: color .5s ease
+
+.footer-addr
+	position: relative
+	font-size: 15px
+	padding-left: 24px
+	margin: 0 0 20px
+	.fa
+		position: absolute
+		left: 0
+		top: 5px
+		font-size: 18px
+		color: #555
+	.footer-phone
+		font-size: 26px
+		font-family: firasans, sans-serif
+		padding-top: 10px
+		display: block
+		white-space: nowrap
+		.fa
+			top: 22px
+			left: 2px
+			font-size: 22px
+
+.map
+	max-height: 200px
+	opacity: .7
+	transition: all .5s ease
+	&:hover
+		opacity: 1
+
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	background-color: #e0e0e0
+	z-index: 12
+	border-radius: 10em
+	color: #666
+	font-size: 26px
+	width: 50px
+	height: 50px
+	text-align: center
+	line-height: 50px
+	cursor: pointer
+	transition: all .3s ease
+	opacity: .5
+	&:hover
+		color: #fff
+		background-color: $accent
+		opacity: 1
+	&.active
+		right: 25px
+
+
+
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha (opacity = $opacity)
+
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 100
+	background-color: $dark
+
+.pulse
+	position: relative
+	left: 50%
+	top: 50vh
+	margin:
+		left: - 40px
+		top: - 40px
+	&::before, &::after
+		content: ''
+		border: 5px solid #323232
+		width: 80px
+		height: 80px
+		border-radius: 500px
+		position: absolute
+	&::before
+		animation: pulse-outer .8s ease-in infinite
+	&::after
+		animation: pulse-inner .8s linear infinite
+
+@keyframes pulse-outer
+	0%
+		//@include opacity(100)
+		opacity: 1
+	50%
+		//@include opacity(50)
+		opacity: .5
+	100%
+		//@include opacity(0)
+		opacity: 0
+
+@keyframes pulse-inner
+	0%
+		//@include opacity(0)
+		opacity: 0
+		transform: scale(0)
+	100%
+		//@include opacity(100)
+		opacity: 1
+		transform: scale(1)
+
+
+
+
+
+@import "media" // Всегда в конце
