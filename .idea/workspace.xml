@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="169ff4f5-0b6f-40b7-9584-1fc9ddd6b16b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/img/photos/thumb/foto-23.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/img/photos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -91,6 +83,7 @@
       <workItem from="1622696718709" duration="15850000" />
       <workItem from="1622747220078" duration="340000" />
       <workItem from="1622893065372" duration="6118000" />
+      <workItem from="1623053444452" duration="795000" />
     </task>
     <servers />
   </component>
