@@ -33,7 +33,7 @@ gulp.task('sass', function() {
 		// grid: true, // Optional. Enable CSS Grid
 		overrideBrowserslist: ['last 10 versions']
 	}))
-	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке (разваричивает css)
+	.pipe(cleanCSS()) // Опционально, закомментировать при отладке (разваричивает css)
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
@@ -76,9 +76,9 @@ gulp.task('build', gulp.series('removedist', 'imagemin', 'sass', 'js', 'buildFil
 gulp.task('deploy', function() {
 
 	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
-		password:  'userpassword',
+		host: 'smitler2.ru',
+		user:      'mikhailurb',
+		password:  'eszusidaic',
 		parallel:  10
 	});
 
@@ -87,7 +87,7 @@ gulp.task('deploy', function() {
 	'dist/.htaccess',
 	];
 	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/path/to/folder/on/server'));
+	.pipe(conn.dest('/home/m/mikhailurb/smitler2/public_html'));
 
 });
 
